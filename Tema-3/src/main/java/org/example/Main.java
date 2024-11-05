@@ -5,8 +5,8 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        Arrays ejercicio1 = new Arrays();
-        ejercicio1.ejercicio1();
+        Vectores vectores_evo = new Vectores();
+        vectores_evo.vectores_evo();
 
     }
 
