@@ -5,8 +5,8 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        Vectores ejercicio8 = new Vectores();
-        ejercicio8.ejercicio8();
+        Teoria_vectores teoria = new Teoria_vectores();
+        teoria.teoria();
 
     }
 
