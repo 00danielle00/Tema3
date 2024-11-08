@@ -122,11 +122,27 @@ public class Vectores {
 
         Scanner teclado = new Scanner(System.in);
         int numero[]= {1,3,5,7,9};
+
         System.out.println("Array original "+ Arrays.toString(numero));
 
         System.out.println("Ingresa el índice a eliminar:");
 
         int eliminar = teclado.nextInt();
+
+        for (int i=eliminar ; i<numero.length-1;i++){
+            numero[i]=numero[i+1];
+
+        }
+        System.out.println("Array resultante: ");
+
+        numero[numero.length-1]=-1;
+
+        for (int i=0;i<numero.length;i++){
+
+            if (numero[i]!= -1){
+                System.out.print(numero[i]+" ");
+            }
+        }
 
     }
     public void ejercicio5(){
@@ -148,6 +164,24 @@ public class Vectores {
 
     }
     public void ejercicio6(){
+        int array[]={1,2,3,2,1};
+
+        int aux;
+
+        for (int i=0;i<array.length;i++){
+            System.out.print(" "+array[i]+" ");
+        }
+        for (int j=0;j<array.length/2;j++){
+            if (array[j] != array[array.length - 1 - j]) {
+                System.out.println("no es simetrico");
+                break;
+            }else {
+                System.out.println("si es simetrico");
+                break;
+            }
+        }
+
+
 
     }
     public void ejercicio7() {
@@ -159,23 +193,42 @@ public class Vectores {
         System.out.println("Array combinado: "+Arrays.toString(array1).replace("[", " ").replace("]"," ").concat(Arrays.toString(array2)).replace("["," ").replace("]"," "));
 
     }
-    public void ejercicio8(){
+    public void ejercicio8() {
         Scanner teclado = new Scanner(System.in);
-        int original[]={1,2,3,4};
 
-        System.out.println("En qué posicion quieres insertar el numero:");
+        int original[] = {1, 2, 3, 4};
+        int[] nuevoArray = new int[original.length + 1];
 
+        System.out.println("En qué posición quieres insertar el número:");
         int posicion = teclado.nextInt();
 
-        System.out.println("Indique el numero que quiere indicar: ");
+        System.out.println("Indica el número que quieres insertar:");
+        int insertar = teclado.nextInt();
 
-        int numeroposicion= teclado.nextInt();
-
-        for (int i =0; i<original.length;i++){
-            if (i == numeroposicion -1) {
-                original[posicion-1] = numeroposicion;
-            }
-            System.out.print(original[i]);
+        for (int i = 0; i < posicion - 1; i++) {
+            nuevoArray[i] = original[i];
         }
+        nuevoArray[posicion - 1] = insertar;
+
+        for (int i = posicion - 1; i < original.length; i++) {
+            nuevoArray[i + 1] = original[i];
+        }
+
+        System.out.println("Array después Nuevo :");
+        for (int i = 0; i < nuevoArray.length; i++) {
+            System.out.print(nuevoArray[i] + " ");
+        }
+    }
+    public void ejercicio9(){
+        String palabras []= {"paco","pepesa","Lorena","Josemanuel"};
+
+        String palabralarga ="";
+
+        for (String palabra:palabras){
+            if (palabra.length()>palabralarga.length()){
+                palabralarga=palabra;
+            }
+
+        } System.out.println("La palabra más larga es "+palabralarga);
     }
 }

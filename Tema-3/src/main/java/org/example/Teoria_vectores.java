@@ -59,7 +59,7 @@ public class Teoria_vectores {
         }
         System.out.println("Array ordenado");
         for (int i=0; i<longitud;i++){
-            System.out.println(array[i]);
+            System.out.print(array[i]);
         }
 
 
