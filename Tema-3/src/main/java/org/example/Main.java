@@ -8,8 +8,8 @@ public class Main {
 //        Teoria_vectores teoria = new Teoria_vectores();
 //        teoria.teoria();
 
-        Vectores ejercicio9 = new Vectores();
-        ejercicio9.ejercicio9();
+        Samurais samurai = new Samurais();
+        samurai.samurai();
 
     }
 
