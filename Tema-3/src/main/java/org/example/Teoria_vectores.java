@@ -1,5 +1,7 @@
 package org.example;
 
+import java.lang.runtime.SwitchBootstraps;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Teoria_vectores {
@@ -61,10 +63,31 @@ public class Teoria_vectores {
         for (int i=0; i<longitud;i++){
             System.out.print(array[i]);
         }
+    }
+    public void juego(){
+        Scanner teclado = new Scanner(System.in);
 
+        Random aleatorio = new Random();
 
+        int maquina = aleatorio.nextInt(3);
 
+        switch (maquina){
+            case 0:
+                System.out.println("Papel");
+                break;
+            case 1:
+                System.out.println("Piedra");
+                break;
+            case 2:
+                System.out.println("Tijera");
+                break;
+        }
 
+        System.out.println("Elige una opcion p/a/t: ");
+        String op = teclado.next();
+
+        String resultadomaquina;
+        String resultadohomano;
 
 
 
