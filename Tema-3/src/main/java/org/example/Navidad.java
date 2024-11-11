@@ -126,7 +126,7 @@ public class Navidad {
         }
         System.out.println("Ha tocado "+ sorteo_num+ " "+sorteo_color+" "+ sorteo_par);
 
-        if (sorteo_num == numero && sorteo_color==color){
+        if (sorteo_num == numero && sorteo_color.equals(color)){
             System.out.println("Has ganado!");
         }else if (numero!=0 && sorteo_color.equals(color)){
             System.out.println("Has acertado el color");
