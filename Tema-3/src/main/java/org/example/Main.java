@@ -1,15 +1,16 @@
 package org.example;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
 //        Teoria_vectores juego = new Teoria_vectores();
 //        juego.juego();
 
-        Samurais samurai = new Samurais();
-        samurai.samurai();
+//        Samurais samurai = new Samurais();
+//        samurai.samurai();
+
+        Navidad ejercicio_navidad = new Navidad();
+        ejercicio_navidad.ejercicio_navidad();
+
 
     }
 
