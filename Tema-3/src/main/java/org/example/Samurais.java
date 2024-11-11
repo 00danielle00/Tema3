@@ -70,6 +70,7 @@ public class Samurais {
                 }
             }
         }
+
         //Empieza la batalla en caso de que lo anterior se cumpla
         System.out.println("¡EMPIEZA LA BATALLA!");
         Random aleatorio = new Random();
@@ -78,24 +79,31 @@ public class Samurais {
 
         int muertosequipo1 = 0;//inicializo estas variables para que vayan contando las bajas de los samurais
         int muertosequipo2 = 0;
+        int combateActual = 0;
 
         for (int i = 0; i < 7; i++) {//hago un bucle para que haga las batallas 7 veces
 
-            System.out.println("Samurai " + inicio + ". ");
+            if (i + inicio < 7){
+                combateActual = inicio + i;
+            } else {
+                combateActual = inicio + i - 7;
+            }
 
-            if (equipo1[i] > equipo2[i]) {
-                System.out.println("Gana Equipo 1 :" + equipo1[i] + " vs " + equipo2[i]);
-                equipo2[i] = 0;
+            System.out.print("Samurai " + (combateActual + 1)+ ". ");
+
+            if (equipo1[combateActual] > equipo2[combateActual]) {
+                System.out.println("Gana Equipo 1 :" + equipo1[combateActual] + " vs " + equipo2[combateActual]);
+                equipo2[combateActual] = 0;
 
                 muertosequipo2++;
-            } else if (equipo1[i] < equipo2[i]) {
-                System.out.println("Gana Equipo 2: " + equipo1[i] + " vs " + equipo2[i]);
-                equipo1[i] = 0;
+            } else if (equipo1[combateActual] < equipo2[combateActual]) {
+                System.out.println("Gana Equipo 2: " + equipo1[combateActual] + " vs " + equipo2[combateActual]);
+                equipo1[combateActual] = 0;
                 muertosequipo1++;
             } else {
                 System.out.println("Empate. Fin de la partida");
-                equipo2[i] = 0;
-                equipo1[i] = 0;
+                equipo2[combateActual] = 0;
+                equipo1[combateActual] = 0;
                 muertosequipo1++;
                 muertosequipo2++;
             }
