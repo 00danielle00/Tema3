@@ -96,5 +96,25 @@ public class Teoria_vectores {
 
     }
 
+    public void ejercicio2(){
+
+        int array []= {2,4,5,6,7,1,3};
+        int guardado;
+        for (int i=0;i<array.length-1;i++){
+            //lo ordena por 2 vez, lo reinicia
+            for (int j=0;j<(array.length-1);j++){
+                if (array[j]>array[j+1]){
+                    guardado=array[j];//guarda el primer valor
+                    array[j]=array[j+1];
+                    array[j+1]=guardado;
+                }
+            }
+        }
+        System.out.println("Array ordenado");
+        for (int i=0; i< array.length;i++){
+            System.out.print(array[i]);
+        }
+
+    }
 
 }
