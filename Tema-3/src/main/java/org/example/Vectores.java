@@ -231,4 +231,57 @@ public class Vectores {
 
         } System.out.println("La palabra más larga es "+palabralarga);
     }
+    public void ordenacion(){
+        int vector[]={7,8,1,4,6};
+        int num = 4;
+
+        int posicion = Arrays.binarySearch(vector,num);
+        System.out.println(posicion);
+
+        Arrays.sort(vector);//ordena arrays de menor a mayor
+
+        System.out.println(posicion);
+
+        //búsqueda binaria, solo con vector ordenado
+
+        //[0,1,2,3,4,5,6,7,8,9]
+
+        // define 2 limites, el primer numero y el ultimo, e indice intermedio que seria (0+9)/2
+        //Si el numero no esta dentro del array, saldrá un número menor que 0
+
+        //Buscar duplicados en el vector:
+        //primero se hace un sort
+
+
+    }
+    public void eliminar (){
+
+        int arrayoriginal []={0,1,1,2,2,3,4,5,6};
+        int tam=0;
+
+        System.out.println(Arrays.toString(arrayoriginal));
+
+        int aux[]=new int[arrayoriginal.length];
+
+        int sin_duplicados[]=new int[tam];
+
+        for (int i =0; i<arrayoriginal.length;i++){
+            if (i!=0 && arrayoriginal[i]==arrayoriginal[i-1]){
+                continue;
+            }else {
+                aux[i]=arrayoriginal[i];
+            }
+
+        }
+        System.out.println(Arrays.toString(aux));
+        int pos=0;
+
+        for (int i= 0; i<aux.length;i++){
+            if (aux[i]!=0){
+                sin_duplicados[pos]=aux[i];
+                pos++;
+            }
+        }
+        System.out.println(Arrays.toString(sin_duplicados));
+    }
 }
