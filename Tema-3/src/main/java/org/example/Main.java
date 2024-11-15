@@ -11,8 +11,6 @@ public class Main {
 //        Navidad ejercicio_navidad = new Navidad();
 //        ejercicio_navidad.ejercicio_navidad();
 
-        Vectores eliminar = new Vectores();
-        eliminar.eliminar();
 
 
     }
