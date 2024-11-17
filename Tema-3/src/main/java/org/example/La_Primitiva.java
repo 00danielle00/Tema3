@@ -30,6 +30,8 @@ public class La_Primitiva {
 
         int complementario=aleatorio.nextInt(49)+1;//numero complementario del 1-49 aleatorio
 
+        int reintegro= aleatorio.nextInt(10);//Reintegro del 0-9
+
         String formato = "\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}/\\d";
 
         String[] guardar_boleto = new String[7];
@@ -37,28 +39,21 @@ public class La_Primitiva {
 
         System.out.println("***** Bienvenido al sorteo *****");
         System.out.println("Introduce los datos de tu boleto:");
-        for (int i = 0; i < num_jugador.length; i++) {
-            num_jugador[i]= teclado.nextLine();
-            num_jugador[i]= num_jugador[i].replace(" ", "");
-            if (!num_jugador[i].matches(formato)) {
+        String entrada_jugador = teclado.nextLine();
+        if (!entrada_jugador.matches(formato)) {
                 System.out.println("ERROR.EL FORMATO INTRODUCIDO NO ES VALIDO");
                 return;
-            }else{
-                String partes [] = num_jugador[i].split("[-/]");
-                System.out.println("Número de partes obtenidas: " + partes.length);
-                if (partes.length !=7) {
-                    System.out.println("ha");
-                    return;
-                }
-                for (int j = 0; j < partes.length; j++) {
-                    guardar_boleto[j]=partes[j];
-                }
-                System.out.println(Arrays.toString(guardar_boleto));
-            }
+        }
+        String partes [] = entrada_jugador.split("[-/]");
+
+        for (int i = 0; i < partes.length; i++) {
+            int numero_jugador = Integer.parseInt(partes[i]);
+            guardar_boleto[i]=partes[i];
         }
 
+        System.out.println("El numero que has elegido es :"+Arrays.toString(guardar_boleto));
 
-
+        boolean contiene =false;
         for (int i = 0; i <sorteo_num.length; i++) { //numeros aleatorios del sorteo, si se repite, se vuelve a generar uno nuevo
             sorteo_num[i]= aleatorio.nextInt(49)+1;
         }
@@ -68,7 +63,6 @@ public class La_Primitiva {
         System.out.println(Arrays.toString(sorteo_ordenado));
 
     }
-
 
 
 
