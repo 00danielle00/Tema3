@@ -28,7 +28,7 @@ public class La_Primitiva {
 
         String num_jugador []= new String[7];//ultimo numero es reintegro
 
-        int complementario=aleatorio.nextInt(49)+1;//numero complementario del 1-49 aleatorio
+        Integer complementario;
 
         int reintegro= aleatorio.nextInt(10);//Reintegro del 0-9
 
@@ -53,38 +53,54 @@ public class La_Primitiva {
 
         System.out.println("El numero que has elegido es :"+Arrays.toString(guardar_boleto));
 
-        boolean contiene =false;
         for (int i = 0; i <sorteo_num.length; i++) { //numeros aleatorios del sorteo, si se repite, se vuelve a generar uno nuevo
             sorteo_num[i]= aleatorio.nextInt(49)+1;
         }
 
-        int sorteo_ordenado[]= Arrays.stream(sorteo_num).distinct().toArray();//ordeno array
+        Arrays.sort(sorteo_num);//ordeno array
+        boolean aux=true;
+        while (aux){//bucle para que no se repitan las bolas
+            aux=false;
+            for (int i = 0; i < sorteo_num.length; i++) {
+                if (i!=sorteo_num.length - 1 && sorteo_num[i]==sorteo_num[i+1]){
+                    System.out.println("Duplicado: "+sorteo_num[i]);
+                    sorteo_num[i]=aleatorio.nextInt(49)+1;
+                    aux=true;
+                }
+                Arrays.sort(sorteo_num);
+            }
+        }
+
+        // Si el número complementario sorteado coincide con alguno de los números ya sorteados anteriormente
+        //(guardados en el vector), debe volver a recalcularlo.
+        do {
+            complementario = aleatorio.nextInt(49) + 1;
+        } while (Arrays.asList(sorteo_num).contains(complementario));
+
         System.out.println("Ha salido:");
-        System.out.println(Arrays.toString(sorteo_ordenado));
+        System.out.println(Arrays.toString(sorteo_num));
+        System.out.println("Complementario: " + complementario);
+        System.out.println("Reintegro: "+reintegro);
+
+        int reintegro_usuario=Integer.parseInt(partes[6]);
+        
+
+
+        //• Categoría Especial: acertar los seis números de la combinación ganadora y el reintegro.
+        //• 1ª Categoría: acertar los seis números de la combinación ganadora.
+        //• 2ª Categoría: acertar cinco números de la combinación y el número complementario.
+        //• 3ª Categoría: acertar cinco números de la combinación.
+        //• 4ª Categoría: acertar cuatro números de la combinación.
+        //• 5ª Categoría: acertar tres números de la combinación.
+        //• Reintegro: acertar el número del reintegro.
+        //• No premiado.
+
+
+
+
+
+
+
 
     }
-
-
-
-
-
-//        boolean comprobar = true;
-//
-//            if (!boleto.matches("\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}-\\d{1,2}/\\d")) {
-//                System.out.println("ERROR. El formato introducido no es correcto");
-//                return;
-//            }
-//
-//                String guardar_boleto[] = boleto.split("[-/]");
-//
-//    }
-
-
-
-
-
-
-
-
-
 }

@@ -10,9 +10,12 @@ public class Main {
 
 //        Navidad ejercicio_navidad = new Navidad();
 //        ejercicio_navidad.ejercicio_navidad();
+//
+//        La_Primitiva juego2 = new La_Primitiva();
+//        juego2.juego2();
 
-        La_Primitiva juego2 = new La_Primitiva();
-        juego2.juego2();
+        Vectores duplicados3 = new Vectores();
+        duplicados3.duplicados3();
 
     }
 
