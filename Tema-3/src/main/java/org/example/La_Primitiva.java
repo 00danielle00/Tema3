@@ -51,7 +51,7 @@ public class La_Primitiva {
             guardar_boleto[i]=partes[i];
         }
 
-        System.out.println("El numero que has elegido es :"+Arrays.toString(guardar_boleto));
+        System.out.println("El numero que has elegido es : "+Arrays.toString(guardar_boleto));
 
         for (int i = 0; i <sorteo_num.length; i++) { //numeros aleatorios del sorteo, si se repite, se vuelve a generar uno nuevo
             sorteo_num[i]= aleatorio.nextInt(49)+1;
@@ -63,7 +63,6 @@ public class La_Primitiva {
             aux=false;
             for (int i = 0; i < sorteo_num.length; i++) {
                 if (i!=sorteo_num.length - 1 && sorteo_num[i]==sorteo_num[i+1]){
-                    System.out.println("Duplicado: "+sorteo_num[i]);
                     sorteo_num[i]=aleatorio.nextInt(49)+1;
                     aux=true;
                 }
@@ -98,17 +97,29 @@ public class La_Primitiva {
                     comprobar = true;
                 }
         }
-        
+        //saco la ultima posicion del array del jugador que es el reintegro
+        int reintegro_jugador = Integer.parseInt(guardar_boleto[guardar_boleto.length - 1]);
+
+        System.out.println("RESULTADOS");
+        if (aciertos==6 && reintegro_jugador==reintegro){
+            System.out.println("ENHORABUENA, HAS GANADO LA CATEGORIA ESPECIAL");
+        } else if (aciertos==6) {
+            System.out.println("EHORABUENA, HAS GANADO LA 1ª CATEGORIA");
+        } else if (aciertos==5 && comprobar) {
+            System.out.println("ENHORABUENA, HAS GANADO LA 2ª CATEGORIA");
+        } else if (aciertos==5) {
+            System.out.println("ENHORABUENA, HAS GANADO LA 3ª CATEGORIA");
+        } else if (aciertos==4) {
+            System.out.println("ENHORABUENA, HAS GANADO LA 4ª CATEGORIA");
+        } else if (aciertos==3) {
+            System.out.println("ENHORABUENA, HAS GANADO LA 5ª CATEGORIA");
+        } else if (reintegro_jugador == reintegro) {
+            System.out.println("¡Has acertado el reintegro!");
+        }else {
+            System.out.println("NO HAS GANADO NADA, VUELVE A INTENTARLO");
+        }
 
 
-        //• Categoría Especial: acertar los seis números de la combinación ganadora y el reintegro.
-        //• 1ª Categoría: acertar los seis números de la combinación ganadora.
-        //• 2ª Categoría: acertar cinco números de la combinación y el número complementario.
-        //• 3ª Categoría: acertar cinco números de la combinación.
-        //• 4ª Categoría: acertar cuatro números de la combinación.
-        //• 5ª Categoría: acertar tres números de la combinación.
-        //• Reintegro: acertar el número del reintegro.
-        //• No premiado.
 
 
 
