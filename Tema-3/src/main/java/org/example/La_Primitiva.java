@@ -82,7 +82,22 @@ public class La_Primitiva {
         System.out.println("Complementario: " + complementario);
         System.out.println("Reintegro: "+reintegro);
 
-        int reintegro_usuario=Integer.parseInt(partes[6]);
+        int aciertos =0;
+        boolean comprobar = false;
+
+        for (int i = 0; i < guardar_boleto.length; i++) {
+                int jugador = Integer.parseInt(guardar_boleto[i]); // convierto a int
+
+                for (int j = 0; j < sorteo_num.length; j++) {
+                    if (jugador == sorteo_num[j]) {
+                        aciertos++;
+                        break;
+                    }
+                }
+                if (jugador == complementario) {
+                    comprobar = true;
+                }
+        }
         
 
 
