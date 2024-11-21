@@ -16,9 +16,11 @@ public class Main {
 //        Vectores duplicados3 = new Vectores();
 //        duplicados3.duplicados3();
 
-        Bucles_anidados ejercicio4 = new Bucles_anidados();
-        ejercicio4.ejercicio4();
+//        Bucles_anidados ejercicio4 = new Bucles_anidados();
+//        ejercicio4.ejercicio4();
 
+        Ejercicios_Matrices ejercicio1 = new Ejercicios_Matrices();
+        ejercicio1.ejercicio1();
     }
 
 }
