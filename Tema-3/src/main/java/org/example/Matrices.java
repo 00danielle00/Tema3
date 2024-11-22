@@ -19,7 +19,7 @@ public class Matrices {
 
         for (int i = 0; i < matriz2.length; i++) {//filas
             for (int j = 0; j < matriz2[i].length; j++) {//columnas
-                System.out.print(matriz2[i][j] + " ");
+                System.out.println(matriz2[i][j] + " ");
 
             }
             System.out.println("\n");
