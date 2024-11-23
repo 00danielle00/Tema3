@@ -19,8 +19,8 @@ public class Main {
 //        Bucles_anidados ejercicio4 = new Bucles_anidados();
 //        ejercicio4.ejercicio4();
 
-            Matrices_Vectores ejercicio1= new Matrices_Vectores();
-            ejercicio1.ejercicio1();
+         Sopa practica3 = new Sopa();
+         practica3.practica3();
     }
 
 }
