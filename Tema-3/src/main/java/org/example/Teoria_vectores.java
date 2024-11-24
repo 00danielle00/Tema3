@@ -1,6 +1,7 @@
 package org.example;
 
 import java.lang.runtime.SwitchBootstraps;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -95,7 +96,6 @@ public class Teoria_vectores {
 
 
     }
-
     public void ejercicio2(){
 
         int array []= {2,4,5,6,7,1,3};
@@ -118,3 +118,4 @@ public class Teoria_vectores {
     }
 
 }
+
