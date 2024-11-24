@@ -241,6 +241,22 @@ public class Vectores {
         }
         System.out.println("La palabra más larga es " + palabralarga);
     }
+    public void ejercicio10(){
+
+        Scanner teclado = new Scanner(System.in);
+        String array []={"animal","manta","somier","salida","caaza","bebida","bata"};
+
+        System.out.println("Dime una letra: ");
+        char letra = teclado.next().charAt(0);
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].charAt(0)==letra){
+                System.out.println(array[i]);
+            }
+
+        }
+
+    }
 
     public void ordenacion() {
         int vector[] = {7, 8, 1, 4, 6};

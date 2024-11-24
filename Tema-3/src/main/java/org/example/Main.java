@@ -13,14 +13,12 @@ public class Main {
 //
 //
 
-//        Vectores duplicados3 = new Vectores();
-//        duplicados3.duplicados3();
-
+        Vectores ejercicio10 = new Vectores();
+        ejercicio10.ejercicio10();
 //        Bucles_anidados ejercicio4 = new Bucles_anidados();
 //        ejercicio4.ejercicio4();
 
-         Sopa practica3 = new Sopa();
-         practica3.practica3();
+
     }
 
 }
