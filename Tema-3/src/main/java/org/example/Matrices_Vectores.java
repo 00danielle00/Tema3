@@ -41,6 +41,16 @@ public class Matrices_Vectores {
             System.out.print("\n");
         }
 
+        //sopa de letras.
+
+        int matrizsopa [][] = new int [3][11];
+
+        for (int i = 0; i < matrizsopa.length ; i++) {
+            String linea = "123456789";
+            for (int j = 0; j < matrizsopa[i].length ; j++) {
+                String linea2[]=linea.split("");
+            }
+        }
 
 
 
