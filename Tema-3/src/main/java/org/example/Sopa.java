@@ -80,7 +80,7 @@ public class Sopa {
         if (!encontrar) {
             for (int i = 0; i < matriz[0].length; i++) {
                 for (int j = 0; j < matriz.length;j++) {
-                    if (lectura.contains(matriz[i][j])) {
+                    if (lectura.equals(matriz[i][j])) {
                         encontrar=true;
                         System.out.println("Palabra encontrada en la posición: [" + i + "][" + j + "]");
                         break;
