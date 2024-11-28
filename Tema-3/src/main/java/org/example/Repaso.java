@@ -114,4 +114,33 @@ public class Repaso {
 
 
     }
+    public void ejercicioo(){
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Ingrese una frase:");
+        String frase = teclado.nextLine();
+
+        String partes []=frase.split(" ");
+
+        String formato = "[a-zA-Z]+";
+
+        int validas=0;
+        int novalida=0;
+
+        for ( String letras: partes){
+            if (!letras.matches(formato)){
+                novalida++;
+                System.out.println("No valida "+letras);
+            }else {
+                validas++;
+                System.out.println("valida "+letras);
+            }
+        }
+
+        System.out.println("Resultados");
+        System.out.println("Palabras válidas: "+validas);
+        System.out.println("palabras no validas: "+novalida);
+
+    }
 }
