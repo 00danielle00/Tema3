@@ -143,4 +143,91 @@ public class Repaso {
         System.out.println("palabras no validas: "+novalida);
 
     }
+    public void examen(){
+        Scanner teclado = new Scanner(System.in);
+        Random aleatorio = new Random();
+        int num=0;
+
+        int bolas = aleatorio.nextInt(40)+10;
+
+        Integer vector_bolas []=new Integer[bolas];
+
+        for (int i = 0; i < vector_bolas.length; i++) {
+            do {
+                num = aleatorio.nextInt(90) + 1;
+            } while (Arrays.asList(vector_bolas[i]).contains(num));
+            vector_bolas[i]=num;
+
+        }
+        Arrays.sort(vector_bolas);
+        //numeros oficiales del bingo
+
+        System.out.println("bienvenido al bingo dl casino cantabrico");
+
+        System.out.println(bolas+" bolas extraidas hasta ahora: "+Arrays.toString(vector_bolas));
+
+
+        String formato ="\\d{1,2}-\\d{1,2}-\\d{1,2}";
+
+        int carton[][] = new int[3][3];
+
+        System.out.println("Introduce los datos de tu carton");
+
+
+        for (int i = 0; i < carton.length; i++) {
+            System.out.println("fila "+(i+1));
+            String valores = teclado.next();
+
+            if (!valores.matches(formato)){
+                System.out.println("cerrando el programa...");
+                return;
+            }
+            String partes []=valores.split("-");
+
+            for (int j = 0; j < carton[0].length; j++) {
+                carton[i][j]=Integer.parseInt(partes[j]);
+            }
+
+        }
+
+        System.out.println("Datos del carton introducido: ");
+        for (int i = 0; i < carton.length; i++) {
+            for (int j = 0; j < carton[i].length; j++) {
+                System.out.print(carton[i][j]+" ");
+            }
+            System.out.println("\n");
+        }
+
+        System.out.println("Premios: ");
+        int premio=0;
+        boolean premios=false;
+
+        for (int i = 0; i < carton.length; i++) {
+            for (int j = 0; j < carton[i].length; j++) {
+                if (carton[i][j]==vector_bolas[i]){
+                    System.out.println("hay premio");
+                    premios=true;
+                    break;
+                }
+
+            }
+            if (!premios){
+                System.out.println("No hay premio");
+                for (int a = 0; a < carton.length; a++) {
+                    System.out.println("Linea " +(i+1));
+                    for (int j = 0; j < carton[i].length; j++) {
+                        if (carton[a][j]==vector_bolas[a]){
+                            System.out.println("Correcta");
+                            premios=true;
+                        }else {
+                            System.out.println("NO");
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+    }
 }

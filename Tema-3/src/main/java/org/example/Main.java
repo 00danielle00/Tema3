@@ -17,8 +17,8 @@ public class Main {
 //        Sopa practica3 = new Sopa();
 //        practica3.practica3();
 
-        Repaso ejercicioo = new Repaso();
-        ejercicioo.ejercicioo();
+        Repaso examen = new Repaso();
+        examen.examen();
 
 
     }
